@@ -11,6 +11,7 @@ import android.os.Message;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
+import io.github.pixee.security.BoundedLineReader;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -260,7 +261,7 @@ public class StarNetUtil {
                     Process pingProcess = runtime.exec("/system/bin/ping -c 1 " + address);
                     InputStreamReader isr = new InputStreamReader(pingProcess.getInputStream());
                     BufferedReader buf = new BufferedReader(isr);
-                    if (buf.readLine() == null) {
+                    if (BoundedLineReader.readLine(buf, 5_000_000) == null) {
                         msg.arg1 = -1;
                     } else {
                         msg.arg1 = 0;
