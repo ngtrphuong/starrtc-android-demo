@@ -49,7 +49,7 @@ public class StarHttpUtil extends AsyncTask<Bundle, Object, Bundle> {
         StringBuffer responseResult = new StringBuffer();
         try {
             String serverUrl = params[0].getString(URL);
-            if(serverUrl==null||serverUrl.length()==0||serverUrl.equals("null")){
+            if(serverUrl==null||serverUrl.length()==0||"null".equals(serverUrl)){
                 bundle = new Bundle();
                 bundle.putBoolean("result", false);
                 bundle.putString("content", "url为空");

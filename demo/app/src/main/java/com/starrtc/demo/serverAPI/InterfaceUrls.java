@@ -89,7 +89,7 @@ public class InterfaceUrls {
         httpPost.addListener(new ICallback() {
             @Override
             public void callback(boolean reqSuccess, String statusCode, String data) {
-                if(reqSuccess && statusCode.equals("1")){
+                if(reqSuccess && "1".equals(statusCode)){
                     try {
                         JSONArray jsonArray = new JSONArray(data);
                         if(jsonArray!=null&&jsonArray.length()>0){
@@ -201,7 +201,7 @@ public class InterfaceUrls {
         httpGet.addListener(new ICallback() {
             @Override
             public void callback(boolean reqSuccess, String statusCode, String data) {
-                if(reqSuccess&&statusCode.equals("1")){
+                if(reqSuccess&&"1".equals(statusCode)){
                     try {
                         //{"status":1,"data":[{"groupName":"\u5403\u918b","creator":"448999","groupId":"100391"}]}
                         JSONArray datas = new JSONArray(data);
@@ -242,7 +242,7 @@ public class InterfaceUrls {
         httpGet.addListener(new ICallback() {
             @Override
             public void callback(boolean reqSuccess, String statusCode, String data) {
-                if(reqSuccess&&statusCode.equals("1")){
+                if(reqSuccess&&"1".equals(statusCode)){
                     try {
                         //{"status":1,"data":{"userIdList":"448999","isIgnore":"0"}}
                         JSONObject jsonObject = new JSONObject(data);

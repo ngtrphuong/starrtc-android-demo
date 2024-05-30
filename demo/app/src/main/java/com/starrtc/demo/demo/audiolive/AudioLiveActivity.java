@@ -664,7 +664,7 @@ public class AudioLiveActivity extends BaseActivity {
                 break;
             case AEvent.AEVENT_LIVE_ERROR:
                 String errStr = (String) eventObj;
-                if(errStr.equals("30016")){
+                if("30016".equals(errStr)){
                     errStr = "直播关闭";
                 }
                 MLOC.showMsg(getApplicationContext(),errStr);

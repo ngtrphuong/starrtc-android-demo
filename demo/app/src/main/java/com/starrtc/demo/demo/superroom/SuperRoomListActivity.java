@@ -241,7 +241,7 @@ public class SuperRoomListActivity extends BaseActivity implements AdapterView.O
             viewIconImg.vHeadBg.setBackgroundColor(ColorUtils.getColor(SuperRoomListActivity.this,mDatas.get(position).name));
             viewIconImg.vHeadCover.setCoverColor(Color.parseColor("#FFFFFF"));
             if(mDatas.get(position).isLiveOn!=null){
-                viewIconImg.vLiveState.setVisibility(mDatas.get(position).isLiveOn.equals("1")?View.VISIBLE:View.INVISIBLE);
+                viewIconImg.vLiveState.setVisibility("1".equals(mDatas.get(position).isLiveOn)?View.VISIBLE:View.INVISIBLE);
             }else{
                 viewIconImg.vLiveState.setVisibility(View.INVISIBLE);
             }

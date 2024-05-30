@@ -484,7 +484,7 @@ public class SuperRoomActivity extends BaseActivity {
             case AEvent.AEVENT_SUPER_ROOM_ERROR:
                 String errStr = (String) eventObj;
                 MLOC.showMsg(getApplicationContext(),errStr);
-                if(errStr.equals("ERROR_VDN_DISCONNECTED")){
+                if("ERROR_VDN_DISCONNECTED".equals(errStr)){
                     superRoomManager.leaveSuperRoom(new IXHResultCallback() {
                         @Override
                         public void success(Object data) {
@@ -496,7 +496,7 @@ public class SuperRoomActivity extends BaseActivity {
                             MLOC.d("SuperRoomActivity","leaveSuperRoom  failed");
                         }
                     });
-                }else if(errStr.equals("ERROR_SRC_DISCONNECTED")){
+                }else if("ERROR_SRC_DISCONNECTED".equals(errStr)){
 
                 }else {
                     stopAndFinish();

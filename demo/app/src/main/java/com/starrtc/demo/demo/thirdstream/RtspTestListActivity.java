@@ -312,7 +312,7 @@ public class RtspTestListActivity extends BaseActivity implements AdapterView.On
             viewIconImg.vCreaterId.setText(mDatas.get(position).creator);
             viewIconImg.vHeadBg.setBackgroundColor(ColorUtils.getColor(RtspTestListActivity.this,mDatas.get(position).name));
             viewIconImg.vHeadCover.setCoverColor(Color.parseColor("#FFFFFF"));
-            if((!TextUtils.isEmpty(mDatas.get(position).isLiveOn))&&mDatas.get(position).isLiveOn.equals("1")){
+            if((!TextUtils.isEmpty(mDatas.get(position).isLiveOn))&&"1".equals(mDatas.get(position).isLiveOn)){
                 viewIconImg.vLiveState.setVisibility(View.VISIBLE);
             }else{
                 viewIconImg.vLiveState.setVisibility(View.INVISIBLE);

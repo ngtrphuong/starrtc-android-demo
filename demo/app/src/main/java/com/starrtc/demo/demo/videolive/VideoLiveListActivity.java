@@ -238,7 +238,7 @@ public class VideoLiveListActivity extends BaseActivity implements AdapterView.O
             viewIconImg.vCreaterId.setText(mDatas.get(position).createrId);
             viewIconImg.vHeadBg.setBackgroundColor(ColorUtils.getColor(VideoLiveListActivity.this,mDatas.get(position).liveName));
             viewIconImg.vHeadCover.setCoverColor(Color.parseColor("#FFFFFF"));
-            if((!TextUtils.isEmpty(mDatas.get(position).isLiveOn))&&mDatas.get(position).isLiveOn.equals("1")){
+            if((!TextUtils.isEmpty(mDatas.get(position).isLiveOn))&&"1".equals(mDatas.get(position).isLiveOn)){
                 viewIconImg.vLiveState.setVisibility(View.VISIBLE);
             }else{
                 viewIconImg.vLiveState.setVisibility(View.INVISIBLE);

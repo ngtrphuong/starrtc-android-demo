@@ -67,7 +67,7 @@ public class KeepLiveService extends Service implements IEventListener {
         MLOC.d("KeepLiveService","initFree");
         isLogin = XHClient.getInstance().getIsOnline();
         if(!isLogin){
-            if(MLOC.userId.equals("")){
+            if("".equals(MLOC.userId)){
                 MLOC.userId = ""+(new Random().nextInt(900000)+100000);
                 MLOC.saveUserId(MLOC.userId);
             }

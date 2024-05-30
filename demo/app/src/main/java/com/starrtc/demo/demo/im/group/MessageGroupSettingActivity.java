@@ -371,7 +371,7 @@ public class MessageGroupSettingActivity extends BaseActivity{
         public void onBindViewHolder(final MyAdapter.MyViewHolder holder, final int position) {
             Map item = mMembersDatas.get(position);
             final String id = (String) item.get("userId");
-            if(id.equals("btnAdd")){
+            if("btnAdd".equals(id)){
                 holder.vUserId.setText("");
                 holder.vHeadBg.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 holder.vHeadCover.setCoverColor(Color.parseColor("#FFFFFF"));

@@ -84,9 +84,9 @@ public class StarNetUtil {
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
             String typeName = networkInfo.getTypeName();
-            if (typeName.equalsIgnoreCase("WIFI")) {
+            if ("WIFI".equalsIgnoreCase(typeName)) {
                 mNetWorkType = WIFI;
-            } else if (typeName.equalsIgnoreCase("MOBILE")) {
+            } else if ("MOBILE".equalsIgnoreCase(typeName)) {
                 String proxyHost = Proxy.getDefaultHost();
                 mNetWorkType = TextUtils.isEmpty(proxyHost) ? (isFastMobileNetwork(context) ? NET_3G : NET_2G) : NET_WAP;
             }
@@ -100,7 +100,7 @@ public class StarNetUtil {
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
             String typeName = networkInfo.getTypeName();
-            if (typeName.equalsIgnoreCase("MOBILE")) {
+            if ("MOBILE".equalsIgnoreCase(typeName)) {
                 return true;
             }
         }
@@ -112,7 +112,7 @@ public class StarNetUtil {
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
             String typeName = networkInfo.getTypeName();
-            if (typeName.equalsIgnoreCase("WIFI")) {
+            if ("WIFI".equalsIgnoreCase(typeName)) {
                 return true;
             }
         }
@@ -211,7 +211,7 @@ public class StarNetUtil {
                         break;
                     default:
                         // http://baike.baidu.com/item/TD-SCDMA 中国移动 联通 电信 三种3G制式
-                        if (_strSubTypeName.equalsIgnoreCase("TD-SCDMA") || _strSubTypeName.equalsIgnoreCase("WCDMA") || _strSubTypeName.equalsIgnoreCase("CDMA2000")){
+                        if ("TD-SCDMA".equalsIgnoreCase(_strSubTypeName) || "WCDMA".equalsIgnoreCase(_strSubTypeName) || "CDMA2000".equalsIgnoreCase(_strSubTypeName)){
                             strNetworkType = NET_3G;
                         }
                         else {
