@@ -2,6 +2,8 @@ package com.starrtc.demo.utils;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -69,7 +71,7 @@ public class StarHttpUtil extends AsyncTask<Bundle, Object, Bundle> {
                     postData.append(key).append("=").append(value);
                 }
             }
-            postConn = (HttpURLConnection)(new URL(serverUrl)).openConnection();
+            postConn = (HttpURLConnection)(Urls.create(serverUrl, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS)).openConnection();
             postConn.setConnectTimeout(TIMEOUT);
 
             if(requestMethod.equals(REQUEST_METHOD_GET)){
