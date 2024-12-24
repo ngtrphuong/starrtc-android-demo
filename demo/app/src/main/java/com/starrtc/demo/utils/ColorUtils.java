@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import java.security.SecureRandom;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -13,7 +14,7 @@ public class ColorUtils {
         return randomColor(256,256,256);
     }
     public static int randomColor(int r,int g,int b){
-        Random random = new Random();
+        Random random = new SecureRandom();
         int _r = random.nextInt(r);
         int _g = random.nextInt(g);
         int _b = random.nextInt(b);
