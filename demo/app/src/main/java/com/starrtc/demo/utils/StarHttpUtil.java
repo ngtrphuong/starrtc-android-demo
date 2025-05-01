@@ -2,6 +2,7 @@ package com.starrtc.demo.utils;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import io.github.pixee.security.BoundedLineReader;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -106,7 +107,7 @@ public class StarHttpUtil extends AsyncTask<Bundle, Object, Bundle> {
                 bufferedReader = new BufferedReader(new InputStreamReader(
                         postConn.getInputStream()));
                 String line;
-                while ((line = bufferedReader.readLine()) != null) {
+                while ((line = BoundedLineReader.readLine(bufferedReader, 5_000_000)) != null) {
                     responseResult.append(line);
                 }
                 bundle = new Bundle();
