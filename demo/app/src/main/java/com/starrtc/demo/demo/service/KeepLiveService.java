@@ -23,6 +23,7 @@ import com.starrtc.starrtcsdk.api.XHCustomConfig;
 import com.starrtc.starrtcsdk.apiInterface.IXHErrorCallback;
 import com.starrtc.starrtcsdk.apiInterface.IXHResultCallback;
 import com.starrtc.starrtcsdk.core.videosrc.XHVideoSourceManager;
+import java.security.SecureRandom;
 
 import java.util.Random;
 
@@ -68,7 +69,7 @@ public class KeepLiveService extends Service implements IEventListener {
         isLogin = XHClient.getInstance().getIsOnline();
         if(!isLogin){
             if(MLOC.userId.equals("")){
-                MLOC.userId = ""+(new Random().nextInt(900000)+100000);
+                MLOC.userId = ""+(new SecureRandom().nextInt(900000)+100000);
                 MLOC.saveUserId(MLOC.userId);
             }
             addListener();
